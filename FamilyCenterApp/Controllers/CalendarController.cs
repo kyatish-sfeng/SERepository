@@ -50,6 +50,7 @@ namespace FamilyCenterApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                calendarModel.TimeStamp = DateTime.Now;
                 db.CalendarModels.Add(calendarModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,6 +83,7 @@ namespace FamilyCenterApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                calendarModel.TimeStamp = DateTime.Now;
                 db.Entry(calendarModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

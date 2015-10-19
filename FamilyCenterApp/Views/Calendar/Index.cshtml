@@ -7,7 +7,11 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Calendar")">
+        <i class="glyphicon glyphicon-plus"></i>
+        &nbsp;
+        Add Event
+    </a>
 </p>
 <table class="table">
     <tr>
@@ -20,7 +24,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.OrderBy(o=>o.EventDate)) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.EventText)
@@ -35,12 +39,12 @@
                 <i class="glyphicon glyphicon-pencil"></i>
                 &nbsp;
                 Edit
-            </a>
+            </a>&nbsp; | &nbsp;
             <a href="@Url.Action("Details", "Calendar", new { id = item.Id })">
                 <i class="glyphicon glyphicon-log-in"></i>
                 &nbsp;
                 Details
-            </a>
+            </a>&nbsp; | &nbsp;
             <a href="@Url.Action("Delete", "Calendar", new { id = item.Id })">
                 <i class="glyphicon glyphicon-remove"></i>
                 &nbsp;
