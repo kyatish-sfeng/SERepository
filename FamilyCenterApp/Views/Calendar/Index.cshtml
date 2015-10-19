@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FamilyCenterApp.Models.CalendarModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventText)
+            <br />
+            <small>Added on: @item.TimeStamp.ToShortDateString()</small>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Calendar", new { id = item.Id })">
+                <i class="glyphicon glyphicon-pencil"></i>
+                &nbsp;
+                Edit
+            </a>
+            <a href="@Url.Action("Details", "Calendar", new { id = item.Id })">
+                <i class="glyphicon glyphicon-log-in"></i>
+                &nbsp;
+                Details
+            </a>
+            <a href="@Url.Action("Delete", "Calendar", new { id = item.Id })">
+                <i class="glyphicon glyphicon-remove"></i>
+                &nbsp;
+                Delete
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

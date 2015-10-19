@@ -1,0 +1,41 @@
+﻿@model FamilyCenterApp.Models.CalendarModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CalendarModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Event
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventText)
+        </dd>
+
+        <dt>
+            Event Added On
+        </dt>
+
+        <dd>
+            @Model.TimeStamp.ToShortDateString()
+        </dd>
+
+        <dt>
+            Event Date
+        </dt>
+
+        <dd>
+            @Model.EventDate.ToShortDateString()
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

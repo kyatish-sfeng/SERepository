@@ -42,5 +42,10 @@ namespace FamilyCenterApp.Controllers
             return View();
         }
 
+        public ActionResult Help()
+        {
+            return View();
+        }
+
     }
 }
