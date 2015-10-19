@@ -15,10 +15,10 @@ namespace FamilyCenterApp.Models
         public string EventText { get; set; }
         public DateTime TimeStamp { get; set; }
         public DateTime EventDate { get; set; }
-        //public int RelationshipId { get; set; }
+        public int? RelationshipId { get; set; }
         public int UserId { get; set; }
 
-        //[ForeignKey("RelationshipId")]
-        //public virtual RelationshipModel Relationship { get; set; }
+        [ForeignKey("RelationshipId")]
+        public virtual RelationshipModel Relationship { get; set; }
     }
 }

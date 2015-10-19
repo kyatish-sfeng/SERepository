@@ -18,7 +18,7 @@ namespace FamilyCenterApp.Models
         public FamilyCenterAppContext() : base("name=FamilyCenterAppContext")
         {
         }
-        //public DbSet<RelationshipModel> RelationshipModels { get; set; }
+        public DbSet<RelationshipModel> RelationshipModels { get; set; }
         public DbSet<MessageModel> MessageModels { get; set; }
         public DbSet<CalendarModel> CalendarModels { get; set; }
         
