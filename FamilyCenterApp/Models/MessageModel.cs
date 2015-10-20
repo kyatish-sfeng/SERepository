@@ -7,7 +7,7 @@ using System.Web;
 
 namespace FamilyCenterApp.Models
 {
-    public class MessageModel
+    public class MessageModel : BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,5 +16,7 @@ namespace FamilyCenterApp.Models
         public DateTime TimeStamp { get; set; }
         public string ImgURL { get; set; }
         public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
     }
 }
