@@ -7,39 +7,39 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Message")">
+        <i class="glyphicon glyphicon-plus"></i>
+        &nbsp;
+        Add Message
+    </a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MessageText)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MessageText)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Url.Content(item.ImgURL)" style="width: 50%; height: 50%" />
+        </div>
+        <div class="col-md-8 @(@item.TimeStamp > DateTime.Now ? "alert-success" : "")">
+            @item.MessageText
+        </div>
+    </div>
+    <div class="btn-group" role="group" style="float: right">
+        <a href="@Url.Action("Edit", "Message", new { id = item.Id })">
+            <i class="glyphicon glyphicon-pencil"></i>
+            &nbsp;
+            Edit
+        </a>&nbsp; | &nbsp;
+        <a href="@Url.Action("Details", "Message", new { id = item.Id })">
+            <i class="glyphicon glyphicon-log-in"></i>
+            &nbsp;
+            Details
+        </a>&nbsp; | &nbsp;
+        <a href="@Url.Action("Delete", "Message", new { id = item.Id })">
+            <i class="glyphicon glyphicon-remove"></i>
+            &nbsp;
+            Delete
+        </a>
+    </div>
+    <br /><hr/>
 }
-
-</table>

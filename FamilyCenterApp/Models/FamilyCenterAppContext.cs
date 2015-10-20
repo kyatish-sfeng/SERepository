@@ -21,6 +21,8 @@ namespace FamilyCenterApp.Models
         public DbSet<RelationshipModel> RelationshipModels { get; set; }
         public DbSet<MessageModel> MessageModels { get; set; }
         public DbSet<CalendarModel> CalendarModels { get; set; }
+        public DbSet<GalleryModel> GalleryModels { get; set; }
+
         
     }
 }

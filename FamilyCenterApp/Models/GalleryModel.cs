@@ -7,7 +7,7 @@ using System.Web;
 
 namespace FamilyCenterApp.Models
 {
-    public class GalleryModel : BaseModel
+    public class GalleryModel
     {
         [Key]
         public int Id { get; set; }
@@ -16,7 +16,6 @@ namespace FamilyCenterApp.Models
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
         public int UserId { get; set; }
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+       
     }
 }

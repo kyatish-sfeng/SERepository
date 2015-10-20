@@ -7,19 +7,17 @@ using System.Web;
 
 namespace FamilyCenterApp.Models
 {
-    public class CalendarModel : BaseModel
+    public class CalendarModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string EventText { get; set; }
         public DateTime TimeStamp { get; set; }
-        public DateTime Modified { get; set; }
+        public DateTime? Modified { get; set; }
         public DateTime EventDate { get; set; }
         public int? RelationshipId { get; set; }
         public int UserId { get; set; }
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
         [ForeignKey("RelationshipId")]
         public virtual RelationshipModel Relationship { get; set; }
     }

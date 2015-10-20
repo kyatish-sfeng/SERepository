@@ -168,7 +168,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\CalendarModel.cs" />
     <Compile Include="Models\FamilyCenterAppContext.cs" />
     <Compile Include="Models\FamilyCenterAppDbInitializer.cs" />
@@ -177,7 +176,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Models\RelationshipModel.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
